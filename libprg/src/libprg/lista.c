@@ -55,4 +55,4 @@ int tamanho_lista(lista_t* lista) {
 void destruir_lista(lista_t* lista) {
     free(lista->elementos);
     free(lista);
-}
+};
