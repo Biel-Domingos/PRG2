@@ -36,6 +36,7 @@ lista_t* criar_lista();
 void adicionar(lista_t* lista, int valor);
 int buscar(lista_t* lista, int valor);
 bool remover(lista_t* lista, int valor);
+int tamanho_lista(lista_t* lista);
 void destruir_lista(lista_t* lista);
 
 #endif // LIBPRG_LIBPRG_H
