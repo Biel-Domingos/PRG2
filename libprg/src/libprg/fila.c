@@ -15,7 +15,7 @@ typedef struct fila {
     int quantidade;
 } fila_t;
 
-fila_t *create_queue() {
+fila_t *criar_fila() {
     // Criar estrutura fila e alocar memória
     fila_t *fila = (fila_t *) malloc(sizeof(fila_t));
 
@@ -30,7 +30,7 @@ fila_t *create_queue() {
     return fila;
 }
 
-void enqueue(fila_t *fila, int valor) {
+void enfileirar(fila_t *fila, int valor) {
     if (fila->quantidade == fila->capacidade) {
         printf(("Erro: Fila cheia (overflow)"));
         exit(EXIT_FAILURE);
@@ -41,7 +41,7 @@ void enqueue(fila_t *fila, int valor) {
     fila->quantidade++;
 }
 
-int dequeue(fila_t *fila) {
+int desenfileirar(fila_t *fila) {
 
     if (fila->quantidade == 0) {
         printf("Erro: Fila vazia (underflow)");
@@ -54,27 +54,27 @@ int dequeue(fila_t *fila) {
     return valor;
 }
 
-bool emptyq(fila_t* fila) {
+bool fila_vazia(fila_t* fila) {
     return fila->quantidade == 0;
 }
 
-bool full(fila_t* fila) {
+bool fila_cheia(fila_t* fila) {
     return fila->quantidade == fila->capacidade;
 }
 
-int sizeq(fila_t* fila) {
+int tamanho_fila(fila_t* fila) {
     return fila->quantidade;
 }
 
-int head(fila_t* fila) {
+int inicio(fila_t* fila) {
     return fila->elementos[fila->inicio];
 }
 
-int tail(fila_t* fila) {
+int fim(fila_t* fila) {
     return fila->elementos[fila->fim];
 }
 
- void destroy_queue(fila_t* fila) {
+ void destruir_fila(fila_t* fila) {
     free(fila->elementos);
     free(fila);
 }

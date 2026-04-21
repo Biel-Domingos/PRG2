@@ -3,35 +3,39 @@
 
 #include <stdbool.h>
 
-#define CAPACIDADE_INICIAL 5
+#define CAPACIDADE_INICIAL 20
 
 /*--- PILHA ---*/
 typedef struct pilha pilha_t;
-pilha_t* create_stack();
-void push(pilha_t* pilha, int valor);
-int pop(pilha_t* pilha);
-bool emptys(pilha_t* pilha);
-int sizes(pilha_t* pilha);
-void detroy_stack(pilha_t* pilha);
+
+pilha_t* criar_pilha();
+void empilhar(pilha_t* pilha, int valor);
+int desempilhar(pilha_t* pilha);
+int topo(pilha_t* pilha);
+bool pilha_vazia(pilha_t* pilha);
+int tamanho_pilha(pilha_t* pilha);
+void destruir_pilha(pilha_t* pilha);
 
 /*--- FILA ---*/
 typedef struct fila fila_t;
-fila_t* create_queue();
-void enqueue(fila_t* fila, int valor);
-int dequeue(fila_t* fila);
-bool emptyq(fila_t* fila);
-bool full(fila_t* fila);
-int sizeq(fila_t* fila);
-int head(fila_t* fila);
-int tail(fila_t* fila);
-void destroy_queue(fila_t* fila);
+
+fila_t* criar_fila();
+void enfileirar(fila_t* fila, int valor);
+int desenfileirar(fila_t* fila);
+bool fila_vazia(fila_t* fila);
+bool fila_cheia(fila_t* fila);
+int tamanho_fila(fila_t* fila);
+int inicio(fila_t* fila);
+int fim(fila_t* fila);
+void destruir_fila(fila_t* fila);
 
 /*--- LISTA ---*/
 typedef struct lista lista_t;
-lista_t* create_list();
-void add(lista_t* lista, int valor);
-int search(lista_t* lista, int valor);
-bool removel(lista_t* lista, int valor);
-void destroy_list(lista_t* lista);
 
-#endif
+lista_t* criar_lista();
+void adicionar(lista_t* lista, int valor);
+int buscar(lista_t* lista, int valor);
+bool remover(lista_t* lista, int valor);
+void destruir_lista(lista_t* lista);
+
+#endif // LIBPRG_LIBPRG_H
