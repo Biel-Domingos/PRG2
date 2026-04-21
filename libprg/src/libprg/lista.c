@@ -9,6 +9,7 @@ struct lista {
     int capacidade;
 };
 
+// Criar lista
 lista_t* criar_lista() {
     lista_t *lista = (lista_t *) malloc(sizeof(lista_t));
     lista->elementos = (int *) malloc(sizeof(int) * CAPACIDADE_INICIAL);
@@ -17,6 +18,7 @@ lista_t* criar_lista() {
     return lista;
 }
 
+// Adicionar elemento na lista
 void adicionar(lista_t* lista, int valor) {
 
     if (lista->tamanho >= lista->capacidade) {
@@ -27,6 +29,7 @@ void adicionar(lista_t* lista, int valor) {
     lista->tamanho++;
 }
 
+// Buscar elemento na lista
 int buscar(lista_t* lista, int valor) {
     for (int i = 0; i < lista->tamanho; ++i) {
         if (lista->elementos[i] == valor) return i;
@@ -34,6 +37,7 @@ int buscar(lista_t* lista, int valor) {
     return -1;
 }
 
+// Remover da lista
 bool remover(lista_t* lista, int valor) {
     int indice = buscar(lista, valor);
     if (indice == -1) return false;
@@ -48,10 +52,12 @@ int primeiro_elemento(lista_t* lista) {
     return -1; // Ou erro
 }
 
+// mostrar tamanho da lista
 int tamanho_lista(lista_t* lista) {
     return lista->tamanho;
 }
 
+// Destruir lista
 void destruir_lista(lista_t* lista) {
     free(lista->elementos);
     free(lista);

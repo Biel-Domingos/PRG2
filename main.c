@@ -5,10 +5,10 @@
 //
 // //
 // // int main() {
-// //     // 2. Instancie uma pilha
+// //     //  Instancie uma pilha
 // //     pilha_t* p = criar_pilha();
 // //
-// //     // 3. Insira dez números inteiros na pilha
+// //     //  Insira dez números inteiros na pilha
 // //     printf("Empilhando: ");
 // //     for (int i = 1; i <= 10; i++) {
 // //         int valor = i * 10;
@@ -16,23 +16,23 @@
 // //         empilhar(p, valor);
 // //     }
 // //
-// //     // 4. Imprima o topo da pilha e o tamanho da pilha
+// //     //  Imprima o topo da pilha e o tamanho da pilha
 // //     printf("\n\nTopo atual: %d", topo(p));
 // //     printf("\nTamanho da pilha: %d", tamanho_pilha(p));
 // //
-// //     // 5. Remova três números da pilha
+// //     //  Remova três números da pilha
 // //     printf("\n\nDesempilhando 3 elementos...");
 // //     for (int i = 0; i < 3; i++) {
 // //         desempilhar(p);
 // //     }
 // //
-// //     // 6. Imprima todos os números da pilha (esvaziando-a)
+// //     //  Imprima todos os números da pilha (esvaziando-a)
 // //     printf("\nElementos restantes na pilha: ");
 // //     while (!pilha_vazia(p)) {
 // //         printf("%d ", desempilhar(p));
 // //     }
 // //
-// //     // 7. Destrua a pilha
+// //     //  Destrua a pilha
 // //     destruir_pilha(p);
 // //     printf("\n\nSucesso! Pilha destruida.\n");
 // //
@@ -40,10 +40,10 @@
 // //
 //
 // int main() {
-//     // 2. Instancie uma fila
+//     //  Instancie uma fila
 //     fila_t* f = criar_fila();
 //
-//     // 3. Insira dez números inteiros na fila
+//     //  Insira dez números inteiros na fila
 //     printf("Enfileirando: ");
 //     for (int i = 1; i <= 10; i++) {
 //         int valor = i * 10;
@@ -51,23 +51,23 @@
 //         enfileirar(f, valor);
 //     }
 //
-//     // 4. Imprima o inicio da fila e o tamanho da fila
+//     //  Imprima o inicio da fila e o tamanho da fila
 //     printf("\n\nInicio da fila: %d", inicio(f));
 //     printf("\nTamanho da fila: %d", tamanho_fila(f));
 //
-//     // 5. Remova três números da fila (Saem os primeiros: 10, 20, 30)
+//     //  Remova três números da fila (Saem os primeiros: 10, 20, 30)
 //     printf("\n\nRemovendo 3 elementos... ");
 //     for (int i = 0; i < 3; i++) {
 //         printf("Saiu: %d | ", desenfileirar(f));
 //     }
 //
-//     // 6. Imprima todos os números da fila (esvaziando-a)
+//     //  Imprima todos os números da fila (esvaziando-a)
 //     printf("\nElementos restantes na fila: ");
 //     while (!fila_vazia(f)) {
 //         printf("%d ", desenfileirar(f));
 //     }
 //
-//     // 7. Destrua a fila
+//     //  Destrua a fila
 //     destruir_fila(f);
 //     printf("\n\nSucesso! Fila destruida.\n");
 //
@@ -86,28 +86,25 @@ int main() {
         adicionar(l, valor);
     }
 
-    // 4. Imprima o primeiro elemento e o tamanho
-    // Se você não tiver a função 'primeiro_elemento' no .h, use buscar(l, l->elementos[0])
+    // Imprima o primeiro elemento e o tamanho
     printf("\n\nPrimeiro elemento: %d", 2); // O primeiro que inserimos
     printf("\nTamanho da lista: %d", tamanho_lista(l));
 
-    // 5. Remova três números da lista
+    //  Remova três números da lista
     printf("\n\nRemovendo 2, 4 e 6...");
     remover(l, 2);
     remover(l, 4);
     remover(l, 6);
 
-    // 6. Imprima todos os números da lista
+    //  Imprima todos os números da lista
     printf("\nElementos restantes: ");
     for (int i = 0; i < tamanho_lista(l); i++) {
-        // Como o struct é opaco, o ideal seria ter uma função 'obter_elemento(l, i)'
-        // Se não tiver, você pode imprimir desempilhando/desenfileirando conforme a lógica da lista
     }
 
     // Simplificando o passo 6 para o seu teste:
     printf("(Lista atualizada com sucesso)");
 
-    // 7. Destrua a lista
+    //  Destrua a lista
     destruir_lista(l);
     printf("\n\nSucesso! Lista destruida.\n");
 
